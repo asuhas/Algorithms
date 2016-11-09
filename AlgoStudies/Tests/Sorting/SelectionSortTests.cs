@@ -9,7 +9,14 @@ namespace AlgoStudies.Tests.Sorting
         [Test, TestCaseSource(typeof(DoubleTestCases), nameof(DoubleTestCases.Data))]
         public static int [] TesSelectionSort(int[] input)
         {
-            var sorter = new SelectionSort();
+            var sorter = new SelectionSortMine();
+            return sorter.Sort(input.ToList()).ToArray();
+        }
+
+        [Test, TestCaseSource(typeof(DoubleTestCases), nameof(DoubleTestCases.Data))]
+        public static int[] TesSelectionSortTheirs(int[] input)
+        {
+            var sorter = new SelectionSortTheirs();
             return sorter.Sort(input.ToList()).ToArray();
         }
 
